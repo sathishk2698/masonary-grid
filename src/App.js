@@ -6,8 +6,8 @@ import "./App.css";
 const StyledDiv = styled.li`
   background-color: ${(props) =>
     props.backgroundColorVal ? props.backgroundColorVal : null};
-  width: 300px;
-  height: 400px;
+  width: 25%;
+  height: 250px;
   color: white;
   margin: 20px;
 `;
@@ -110,11 +110,12 @@ export default class App extends React.Component {
             value={this.state.inputValue}
           />
           <StyledButton onClick={this.submitHandler}>Submit</StyledButton>
-        </div>
+          </div>
+
         {this.state.resultsFound &&
         masonryGridColors.length > 0 &&
         masonryGridColors !== undefined ? (
-          <Masonry className={"my-gallery-class"} elementType={"ul"}>
+          <Masonry className={""} elementType={"ul"}>
             {masonryGridColors.map((val) => {
               return <StyledDiv key={val} backgroundColorVal={val} />;
             })}
@@ -122,6 +123,7 @@ export default class App extends React.Component {
         ) : (
           <p className="App"> No Results Found! </p>
         )}
+
       </div>
     );
   }
