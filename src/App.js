@@ -89,7 +89,7 @@ export default class App extends React.Component {
   submitHandler = () => {
     const { inputValue, colors } = this.state;
     if (inputValue !== "") {
-      let result = colors.find((val) => val.UserColor === inputValue);
+      let result = colors.find((val) => val.UserColor === inputValue.toLowerCase());
       if (result !== undefined) {
         this.setState({masonryGridColors: result.relatedColors, resultsFound: true})
       } else {
@@ -101,8 +101,8 @@ export default class App extends React.Component {
   render() {
     const { masonryGridColors } = this.state;
     return (
-      <div>
-        <div className="App">
+      <div className="App">
+        <div>
           <p> Please Enter the color:</p>
           <p> Note: Available colors are red, blue and yellow.</p>
           <StyledInput
