@@ -91,8 +91,7 @@ export default class App extends React.Component {
     if (inputValue !== "") {
       let result = colors.find((val) => val.UserColor === inputValue);
       if (result !== undefined) {
-        this.state.masonryGridColors = result.relatedColors;
-        this.setState({ resultsFound: true });
+        this.setState({masonryGridColors: result.relatedColors, resultsFound: true})
       } else {
         this.setState({ resultsFound: false });
       }
